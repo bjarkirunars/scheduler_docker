@@ -1,0 +1,37 @@
+{
+  "name": "scheduler",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS='--max-old-space-size=8192' next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "postinstall"
+  },
+  "postinstall": {
+    "node_modules/@bryntum/demo-resources/images/users/*": "copy public/users/",
+    "node_modules/@bryntum/demo-resources/images/favicon.png": "copy public/",
+    "node_modules/@bryntum/schedulerpro/*.css": "copy public/themes/",
+    "node_modules/@bryntum/schedulerpro/fonts/*": "copy public/themes/fonts/"
+  },
+  "dependencies": {
+    "@bryntum/demo-resources": "^1.0.0",
+    "@bryntum/schedulerpro": "npm:@bryntum/schedulerpro-trial@^4.3.6",
+    "@bryntum/schedulerpro-react": "^4.3.6",
+    "axios": "^0.25.0",
+    "next": "12.0.9",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "^1.49.0",
+    "web-vitals": "~1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.13",
+    "@types/react": "17.0.38",
+    "cross-env": "~7.0.3",
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.9",
+    "postinstall": "~0.7.0",
+    "typescript": "4.5.5"
+  }
+}
